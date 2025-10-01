@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - Progress Tracking</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+  </head>
+  <body>
+    <!-- Menu will be injected by scripts/menu.js -->
+
+    <main class="dashboard-container">
+      <section class="dashboard-overview">
+        <div class="card stats">
+          <h2>Your Progress</h2>
+          <div class="stat-grid">
+            <div class="stat-item">
+              <div class="stat-value" id="totalCourses">0</div>
+              <div class="stat-label">Courses Enrolled</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="overallCompletion">0%</div>
+              <div class="stat-label">Overall Completion</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="skillsCount">0</div>
+              <div class="stat-label">Skills Acquired</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="certsCount">0</div>
+              <div class="stat-label">Certificates</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card points">
+          <h3>Points & Credits</h3>
+          <div class="points-bar">
+            <div class="points-value" id="pointsValue">0</div>
+            <div class="points-target">Target: <span id="pointsTarget">1000</span></div>
+          </div>
+          <div class="progress small" aria-hidden="true">
+            <div class="progress-fill" id="pointsProgress" style="width:0%"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-main">
+        <div class="card courses">
+          <h3>Courses Enrolled</h3>
+          <ul id="coursesList" class="courses-list">
+            <!-- populated by JS -->
+          </ul>
+        </div>
+
+        <div class="card skills">
+          <h3>Skills Acquired & Badges</h3>
+          <div id="skillsList" class="skills-list">
+            <!-- populated by JS -->
+          </div>
+        </div>
+
+        <div class="card leaderboard">
+          <h3>Leaderboards</h3>
+          <div class="leaderboard-tabs">
+            <button class="tab active" data-skill="web">Web Dev</button>
+            <button class="tab" data-skill="design">Design</button>
+            <button class="tab" data-skill="business">Business</button>
+          </div>
+          <ol id="leaderboardList" class="leaderboard-list">
+            <!-- populated by JS -->
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <script src="scripts/firebase-init.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/dashboard.js"></script>
+  </body>
+</html>
